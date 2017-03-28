@@ -190,7 +190,8 @@ class WebDriver(object):
         })
         self.session_id = response['sessionId']
         self.capabilities = response['value']
-
+        self.w3c = "specificationLevel" in self.capabilities
+    
     def _wrap_value(self, value):
         if isinstance(value, dict):
             converted = {}
